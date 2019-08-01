@@ -5,7 +5,9 @@ import com.risk.model.User;
 
 public interface UserService {
 	
-	void saveEmployee(User user);
+	boolean saveEmployee(User user);
+
+	boolean isEmailAlreadyInUse(String value);
 
 	
 

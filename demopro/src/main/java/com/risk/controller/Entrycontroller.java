@@ -35,8 +35,14 @@ public class Entrycontroller {
 		if (result.hasErrors()) {
 			return "register";
 		}
+	
+		boolean isInsertedInDb=service.saveEmployee(user);
 		
-		service.saveEmployee(user);
+		if (!isInsertedInDb) {
+			
+			model.addAttribute("hasMistakes",true);
+			return "register";
+		}
 		
 		model.addAttribute("success", "Employee " + user.getName() + " registered successfully");
         return "success";

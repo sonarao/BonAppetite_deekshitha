@@ -9,7 +9,7 @@ import javax.validation.*;
 @Target({ ElementType.FIELD })
 public @interface UniqueEmail {
 	
-public String message() default "There is already user with this email!";
+public String message() default "There is already user with this email!.";
 	
 	public Class<?>[] groups() default {};
 	

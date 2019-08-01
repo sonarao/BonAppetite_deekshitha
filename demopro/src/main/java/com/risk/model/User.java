@@ -38,8 +38,9 @@ public class User {
 	@NotNull
 	private int age;
 
+	
+	
 	@IsValidEmail
-	/* @UniqueEmail */
 	private String email;
 
 	@IsphoneNumber

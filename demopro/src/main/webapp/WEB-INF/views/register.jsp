@@ -89,6 +89,9 @@ padding: 15px;
 <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+
+	
 	$(document).ready(function() {
 		$("#pass").keyup(function() {
 			check_pass();
@@ -97,9 +100,9 @@ padding: 15px;
 
 	function check_pass() {
 		var val = document.getElementById("pass").value;
-		
+
 		var meter = document.getElementById("meter");
-		
+
 		var no = 0;
 		if (val != "") {
 			// If the password length is less than or equal to 6
@@ -164,31 +167,39 @@ padding: 15px;
 			document.getElementById("pass_type").innerHTML = "";
 		}
 	}
-	
+
 	function checkForm() {
 		var pwd = document.getElementById("pass").value;
 		var repwd = document.getElementById("confirm_password").value;
-		 if (pwd != repwd) {
+		if (pwd != repwd) {
 			alert("password is not matching");
 			return false;
 		} else {
 			return true;
 		}
 	}
-	
+
 	function myFunction() {
-		  var x = document.getElementById("pass");
-		  if (x.type === "password") {
-		    x.type = "text";
-		  } else {
-		    x.type = "password";
-		  }
+		var x = document.getElementById("pass");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
 		}
+	}
+	
+	
 </script>
 </head>
 <body>
+
+ 
+               
+            
+	
 	<form:form action="/demopro/success_register" method="post" onsubmit="return checkForm()" modelAttribute="data">
 		<div class="box">
+		<center><h1>Employee Registration</h1></center>
 			<label>Name:</label><br>
 			<form:input path="name" placeholder="Enter your last name"
 				cssClass="name" />
@@ -200,6 +211,18 @@ padding: 15px;
 			<form:input path="email" placeholder="enter your email"
 				cssClass="name" />
 			<form:errors path="email" cssClass="error"></form:errors>
+			
+			 <td colspan="3">
+                    <c:choose>
+                        <c:when test="${hasMistakes}">
+                           <center> <h4 class="error">There is a user with same email id</h4></center>
+                        </c:when>
+                        <c:otherwise>
+                          
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+			
 			<br> <label>phone</label>
 			<form:input path="phone" placeholder="enter your phone number"
 				maxlength="10" cssClass="name" />
@@ -221,7 +244,7 @@ padding: 15px;
 			<br><br>
 			
 			 <label>Confirm
-				Password</label><br> <input name="confirm_password" type="password" id="confirm_password" required
+				Password</label><br> <input name="confirm_password" type="password" id="confirm_password" 
 				placeholder="re enter password" class="name" /> <br>
 				
 				 <input
