@@ -197,7 +197,7 @@ padding: 15px;
                
             
 	
-	<form:form action="/demopro/success_register" method="post" onsubmit="return checkForm()" modelAttribute="data">
+	<form:form action="/demopro/success_register" method="post" onsubmit="return checkForm()" modelAttribute="employee">
 		<div class="box">
 		<center><h1>Employee Registration</h1></center>
 			<label>Name:</label><br>
@@ -252,7 +252,7 @@ padding: 15px;
 				
 				
 			<center>
-				<a href="/order" style="text-align: center">already have an
+				<a href="/demopro/" style="text-align: center">already have an
 					account? Sign in</a>
 			</center>
 		</div>

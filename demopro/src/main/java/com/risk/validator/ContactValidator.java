@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class ContactValidator implements ConstraintValidator<IsphoneNumber, String> {
+public class ContactValidator implements ConstraintValidator<IsPhoneNumberValid, String> {
 
 	@Override
-	public void initialize(IsphoneNumber is) {
+	public void initialize(IsPhoneNumberValid is) {
 		is.message();
 
 	}
@@ -24,7 +24,7 @@ public class ContactValidator implements ConstraintValidator<IsphoneNumber, Stri
 
 		//String MOBILE_PATTERN = "^[789]{10}$";
 		
-		String MOBILE_PATTERN = "^([789]{1})([123456789]{1})([0-9]{8})$";
+		String MOBILE_PATTERN = "^([6789]{1})([123456789]{1})([0-9]{8})$";
 		Pattern pattern = Pattern.compile(MOBILE_PATTERN);
 		Matcher matcher = pattern.matcher(phone);
 		if (matcher.matches()) {

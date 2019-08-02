@@ -25,7 +25,7 @@ public class PasswordSValidator implements ConstraintValidator<IsValidPassword, 
 		
 
 		//String MOBILE_PATTERN = "^([a-zA-Z0-9@*#%&]{8,15})$";
-		String MOBILE_PATTERN="^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$";
+		String MOBILE_PATTERN="[^,.]^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$";
 		Pattern pattern = Pattern.compile(MOBILE_PATTERN);
 		Matcher matcher = pattern.matcher(password);
 		if (matcher.matches()) {
